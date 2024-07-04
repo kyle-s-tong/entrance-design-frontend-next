@@ -7,6 +7,7 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "@nuxtjs/seo",
     "@zadigetvoltaire/nuxt-gtm",
+    "@nuxtjs/strapi"
   ],
   gtm: {
     id: "GTM-XXXXXX",
