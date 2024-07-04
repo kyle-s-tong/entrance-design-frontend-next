@@ -7,9 +7,17 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "@nuxtjs/seo",
     "@zadigetvoltaire/nuxt-gtm",
-    "@nuxtjs/strapi"
+    "@nuxtjs/strapi",
   ],
   gtm: {
     id: "GTM-XXXXXX",
+  },
+  strapi: {
+    url: process.env.STRAPI_URL || "http://localhost:1337",
+    prefix: "/api",
+    admin: "/admin",
+    version: "v4",
+    cookie: {},
+    cookieName: "strapi_jwt",
   },
 });
