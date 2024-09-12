@@ -1,10 +1,24 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+import fetchApi from '../lib/strapi';
+import type Pricing from '../interfaces/pricings';
+
+const pricings = await fetchApi<Pricing[]>({
+  endpoint: 'pricings', // the content type to fetch
+  wrappedByKey: '', // the key to unwrap the response
+});
 ---
 
 <Layout title="Welcome to Astro.">
 	<main>
+        {
+          pricings.map((pricing) => (
+            <li>
+                {pricing.Title}
+            </li>
+          ))
+        }
 		<svg
 			class="astro-a"
 			width="495"
