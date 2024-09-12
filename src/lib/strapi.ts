@@ -24,7 +24,6 @@ export default async function fetchApi<T>({
   }
 
   const url = new URL(`${import.meta.env.STRAPI_URL}/${endpoint}`);
-  console.log(url);
 
   if (query) {
     Object.entries(query).forEach(([key, value]) => {
@@ -32,7 +31,6 @@ export default async function fetchApi<T>({
     });
   }
   const res = await fetch(url.toString());
-  console.log(res);
   let data = await res.json();
 
   if (wrappedByKey) {
