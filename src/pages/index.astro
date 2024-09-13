@@ -1,15 +1,27 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import fetchApi from "../lib/strapi";
-import type Pricing from "../interfaces/pricings";
+import { Image } from "astro:assets";
 
-const pricings = await fetchApi<Pricing[]>({
-  endpoint: "pricings",
-});
+import Layout from "../layouts/Layout.astro";
+
+import backgroundImage from "../assets/images/background-image.webp";
 ---
 
-<Layout title="Welcome to Astro.">
-  <main>
-    {pricings.map((pricing) => <li>{pricing.Title}</li>)}
+<Layout title="Entrance Design">
+  <main class="flex flex-col items-center">
+    <section>
+      <Image
+        src={backgroundImage}
+        alt="Picture of a well-designed room with a plant and linen curtain."
+        class="border rounded-lg"
+      />
+      <div class="pt-16 text-zinc-900">
+        <h1 class="text-5xl mb-8">Interior design on your terms</h1>
+        <p>
+          We are a team of designers who specialize in creating beautiful and
+          functional spaces for your home or office. Our goal is to help you
+          create a space that reflects your personality and lifestyle.
+        </p>
+      </div>
+    </section>
   </main>
 </Layout>
