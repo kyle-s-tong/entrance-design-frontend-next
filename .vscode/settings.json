@@ -1,0 +1,7 @@
+{
+  "prettier.configPath": ".prettier.mjs",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "prettier.prettierPath": "./node_modules/prettier"
+}
